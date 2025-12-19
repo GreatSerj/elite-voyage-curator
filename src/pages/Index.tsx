@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Plane, Palmtree, Heart, UtensilsCrossed, Mountain, Waves, Ship, Users, Clock, Shield, Star, MessageCircle, ChevronDown, MapPin, Sparkles, CheckCircle2 } from 'lucide-react';
 import heroImage from '@/assets/hero-travel.jpg';
+import aboutPhoto from '@/assets/about-photo.jpg';
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [formData, setFormData] = useState({
@@ -435,7 +436,7 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="aspect-[3/4] bg-muted rounded-2xl overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop" alt="Travel Expert" className="w-full h-full object-cover" />
+                <img src={aboutPhoto} alt="Travel Expert" className="w-full h-full object-cover" />
               </div>
               <div>
                 <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">О нас</h2>
