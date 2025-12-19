@@ -210,42 +210,62 @@ const Index = () => {
             Работаю с лучшими направлениями по всему миру
           </p>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[{
-            region: 'Мальдивы',
-            desc: 'Виллы на воде, идеальный медовый месяц',
-            highlight: true
-          }, {
-            region: 'ОАЭ',
-            desc: 'Роскошь Дубая, пустынные приключения',
-            highlight: false
-          }, {
-            region: 'Европа',
-            desc: 'Культурные маршруты, гастрономия, шопинг',
-            highlight: false
-          }, {
-            region: 'Япония',
-            desc: 'Гастрономия, культура, городские маршруты',
-            highlight: true
-          }, {
-            region: 'Сейшелы',
-            desc: 'Уединённые острова, дикая природа',
-            highlight: false
-          }, {
-            region: 'Африка',
-            desc: 'Сафари, океан, экзотика',
-            highlight: true
-          }].map((dest, i) => <Card key={i} className={`overflow-hidden group hover:shadow-xl transition-shadow ${dest.highlight ? 'border-primary/30' : ''}`}>
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-3 mb-3">
-                    <MapPin className="w-6 h-6 text-primary shrink-0 mt-1" />
-                    <div>
-                      <h3 className="text-2xl font-serif font-semibold mb-2">{dest.region}</h3>
-                      <p className="text-muted-foreground leading-relaxed">{dest.desc}</p>
+              region: 'Мальдивы',
+              desc: 'Виллы на воде, идеальный медовый месяц',
+              image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&h=400&fit=crop'
+            }, {
+              region: 'ОАЭ',
+              desc: 'Роскошь Дубая, пустынные приключения',
+              image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&h=400&fit=crop'
+            }, {
+              region: 'Европа',
+              desc: 'Культурные маршруты, гастрономия, шопинг',
+              image: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&h=400&fit=crop'
+            }, {
+              region: 'Япония',
+              desc: 'Гастрономия, культура, городские маршруты',
+              image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&h=400&fit=crop'
+            }, {
+              region: 'Сейшелы',
+              desc: 'Уединённые острова, дикая природа',
+              image: 'https://images.unsplash.com/photo-1589979481223-deb893043163?w=600&h=400&fit=crop'
+            }, {
+              region: 'Африка',
+              desc: 'Сафари, океан, экзотика',
+              image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&h=400&fit=crop'
+            }, {
+              region: 'Турция',
+              desc: 'Классика и эксклюзивные туры',
+              image: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=600&h=400&fit=crop'
+            }, {
+              region: 'Китай',
+              desc: 'Бизнес, экскурсии, отдых',
+              image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=600&h=400&fit=crop'
+            }, {
+              region: 'Россия',
+              desc: 'Бизнес-поездки и премиальный отдых',
+              image: 'https://images.unsplash.com/photo-1513326738677-b964603b136d?w=600&h=400&fit=crop'
+            }].map((dest, i) => (
+              <Card key={i} className="overflow-hidden group cursor-pointer border-0 shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="relative h-56 overflow-hidden">
+                  <img 
+                    src={dest.image} 
+                    alt={dest.region} 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <div className="flex items-center gap-2 mb-1">
+                      <MapPin className="w-4 h-4 text-primary" />
+                      <h3 className="text-xl font-serif font-semibold text-white">{dest.region}</h3>
                     </div>
+                    <p className="text-white/80 text-sm">{dest.desc}</p>
                   </div>
-                </CardContent>
-              </Card>)}
+                </div>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
