@@ -200,6 +200,36 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Services Section */}
+      <section className="py-24 bg-secondary/30">
+        <div className="container px-4">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-center mb-4">
+            Наши услуги
+          </h2>
+          <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto text-lg">
+            Полный спектр услуг для комфортного путешествия
+          </p>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {[
+              { icon: Plane, title: 'Авиабилеты' },
+              { icon: Ship, title: 'Трансферы' },
+              { icon: Palmtree, title: 'Организация путешествий' },
+              { icon: Users, title: 'Корпоративные поездки' },
+              { icon: Clock, title: 'Сервис 24/7' },
+              { icon: Shield, title: 'Визовая поддержка' }
+            ].map((service, i) => (
+              <div key={i} className="flex flex-col items-center text-center p-6 bg-background rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                  <service.icon className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="font-medium text-sm">{service.title}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Geography Section */}
       <section id="geography" className="py-24 bg-secondary/30">
         <div className="container px-4">
