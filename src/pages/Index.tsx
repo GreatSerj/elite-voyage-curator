@@ -52,7 +52,7 @@ const Index = () => {
                 География
               </button>
               <button onClick={() => scrollToSection('about')} className="text-sm hover:text-primary transition-colors">
-                Обо мне
+                О нас
               </button>
               <button onClick={() => scrollToSection('reviews')} className="text-sm hover:text-primary transition-colors">
                 Отзывы
