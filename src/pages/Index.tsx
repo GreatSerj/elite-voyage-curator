@@ -111,7 +111,7 @@ const Index = () => {
             Для кого это
           </h2>
           <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto text-lg">
-            Создаю путешествия для тех, кто ценит своё время и комфорт
+            Создаём путешествия для тех, кто ценит своё время и комфорт
           </p>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
