@@ -75,7 +75,7 @@ const Index = () => {
         
         <div className="container relative z-10 px-4 py-32">
           <div className="max-w-3xl animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 text-balance leading-tight">
+            <h1 className="text-5xl md:text-7xl font-serif italic font-normal text-white mb-6 text-balance leading-tight">
               Премиальные путешествия под ключ
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
@@ -211,21 +211,30 @@ const Index = () => {
           </p>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {[
-              { icon: Plane, title: 'Авиабилеты' },
-              { icon: Ship, title: 'Трансферы' },
-              { icon: Palmtree, title: 'Организация путешествий' },
-              { icon: Users, title: 'Корпоративные поездки' },
-              { icon: Clock, title: 'Сервис 24/7' },
-              { icon: Shield, title: 'Визовая поддержка' }
-            ].map((service, i) => (
-              <div key={i} className="flex flex-col items-center text-center p-6 bg-background rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            {[{
+            icon: Plane,
+            title: 'Авиабилеты'
+          }, {
+            icon: Ship,
+            title: 'Трансферы'
+          }, {
+            icon: Palmtree,
+            title: 'Организация путешествий'
+          }, {
+            icon: Users,
+            title: 'Корпоративные поездки'
+          }, {
+            icon: Clock,
+            title: 'Сервис 24/7'
+          }, {
+            icon: Shield,
+            title: 'Визовая поддержка'
+          }].map((service, i) => <div key={i} className="flex flex-col items-center text-center p-6 bg-background rounded-xl shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <service.icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="font-medium text-sm">{service.title}</h3>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -242,49 +251,44 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[{
-              region: 'Мальдивы',
-              desc: 'Виллы на воде, идеальный медовый месяц',
-              image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&h=400&fit=crop'
-            }, {
-              region: 'ОАЭ',
-              desc: 'Роскошь Дубая, пустынные приключения',
-              image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&h=400&fit=crop'
-            }, {
-              region: 'Европа',
-              desc: 'Культурные маршруты, гастрономия, шопинг',
-              image: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&h=400&fit=crop'
-            }, {
-              region: 'Япония',
-              desc: 'Гастрономия, культура, городские маршруты',
-              image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&h=400&fit=crop'
-            }, {
-              region: 'Сейшелы',
-              desc: 'Уединённые острова, дикая природа',
-              image: 'https://images.unsplash.com/photo-1589979481223-deb893043163?w=600&h=400&fit=crop'
-            }, {
-              region: 'Африка',
-              desc: 'Сафари, океан, экзотика',
-              image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&h=400&fit=crop'
-            }, {
-              region: 'Турция',
-              desc: 'Классика и эксклюзивные туры',
-              image: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=600&h=400&fit=crop'
-            }, {
-              region: 'Китай',
-              desc: 'Бизнес, экскурсии, отдых',
-              image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=600&h=400&fit=crop'
-            }, {
-              region: 'Россия',
-              desc: 'Бизнес-поездки и премиальный отдых',
-              image: 'https://images.unsplash.com/photo-1513326738677-b964603b136d?w=600&h=400&fit=crop'
-            }].map((dest, i) => (
-              <Card key={i} className="overflow-hidden group cursor-pointer border-0 shadow-lg hover:shadow-2xl transition-all duration-300">
+            region: 'Мальдивы',
+            desc: 'Виллы на воде, идеальный медовый месяц',
+            image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&h=400&fit=crop'
+          }, {
+            region: 'ОАЭ',
+            desc: 'Роскошь Дубая, пустынные приключения',
+            image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&h=400&fit=crop'
+          }, {
+            region: 'Европа',
+            desc: 'Культурные маршруты, гастрономия, шопинг',
+            image: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&h=400&fit=crop'
+          }, {
+            region: 'Япония',
+            desc: 'Гастрономия, культура, городские маршруты',
+            image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&h=400&fit=crop'
+          }, {
+            region: 'Сейшелы',
+            desc: 'Уединённые острова, дикая природа',
+            image: 'https://images.unsplash.com/photo-1589979481223-deb893043163?w=600&h=400&fit=crop'
+          }, {
+            region: 'Африка',
+            desc: 'Сафари, океан, экзотика',
+            image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&h=400&fit=crop'
+          }, {
+            region: 'Турция',
+            desc: 'Классика и эксклюзивные туры',
+            image: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=600&h=400&fit=crop'
+          }, {
+            region: 'Китай',
+            desc: 'Бизнес, экскурсии, отдых',
+            image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=600&h=400&fit=crop'
+          }, {
+            region: 'Россия',
+            desc: 'Бизнес-поездки и премиальный отдых',
+            image: 'https://images.unsplash.com/photo-1513326738677-b964603b136d?w=600&h=400&fit=crop'
+          }].map((dest, i) => <Card key={i} className="overflow-hidden group cursor-pointer border-0 shadow-lg hover:shadow-2xl transition-all duration-300">
                 <div className="relative h-56 overflow-hidden">
-                  <img 
-                    src={dest.image} 
-                    alt={dest.region} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
+                  <img src={dest.image} alt={dest.region} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <div className="flex items-center gap-2 mb-1">
@@ -294,8 +298,7 @@ const Index = () => {
                     <p className="text-white/80 text-sm">{dest.desc}</p>
                   </div>
                 </div>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -491,7 +494,7 @@ const Index = () => {
               <div>
                 <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">О нас</h2>
                 <div className="space-y-4 text-lg text-muted-foreground leading-relaxed mb-8">
-                  <p>Я Ирина - основатель и владелец компании Тревел Авеню. За 12+ лет в индустрии премиального туризма мы организовали сотни путешествий в 40+ странах мира. Моя философия проста: каждая поездка должна быть уникальной и безупречной.</p>
+                  <p>Я Ирина Сиделева - основатель и владелец компании Тревел Авеню. За 12+ лет в индустрии премиального туризма мы организовали сотни путешествий в 40+ странах мира. Моя философия проста: каждая поездка должна быть уникальной и безупречной.</p>
                   <p>Мы не работаем по шаблонам. Вместо этого мы внимательно слушаем, что важно именно для вас, и создаем маршрут, который идеально подходит под ваш стиль жизни и ожидания.</p>
                   <p>Наш фокус — премиальные путешествия, где важна каждая деталь. От выбора отеля до бронирования столика в ресторане с мишленовской звездой — мы позаботимся обо всём.
 
@@ -642,24 +645,14 @@ const Index = () => {
                   <span>TravelAvenue@yandex.ru</span>
                 </div>
                 <div className="flex items-center gap-4 mt-4">
-                  <a 
-                    href="https://wa.me/79119269863" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-background/10 hover:bg-background/20 rounded-full flex items-center justify-center transition-colors"
-                  >
+                  <a href="https://wa.me/79119269863" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-background/10 hover:bg-background/20 rounded-full flex items-center justify-center transition-colors">
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                     </svg>
                   </a>
-                  <a 
-                    href="https://t.me/TravelAvenue" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-background/10 hover:bg-background/20 rounded-full flex items-center justify-center transition-colors"
-                  >
+                  <a href="https://t.me/TravelAvenue" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-background/10 hover:bg-background/20 rounded-full flex items-center justify-center transition-colors">
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
                     </svg>
                   </a>
                 </div>
