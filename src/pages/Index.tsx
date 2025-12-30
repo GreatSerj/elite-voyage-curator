@@ -92,7 +92,7 @@ const Index = () => {
               </Button>
             </div>
             <div className="flex flex-wrap gap-4">
-              {['20+ стран', '24/7 на связи', 'Индивидуальные маршруты', 'Конфиденциальность'].map(badge => <div key={badge} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-white text-sm">
+              {['40+ стран', '24/7 на связи', 'Индивидуальные маршруты', 'Конфиденциальность'].map(badge => <div key={badge} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-white text-sm">
                   {badge}
                 </div>)}
             </div>
@@ -156,42 +156,43 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[{
-            icon: Palmtree,
+            image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=400&fit=crop',
             title: 'Пляжный отдых',
             desc: 'Лучшие курорты и частные пляжи'
           }, {
-            icon: Heart,
+            image: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400&fit=crop',
             title: 'Медовый месяц',
             desc: 'Романтика в райских уголках мира'
           }, {
-            icon: UtensilsCrossed,
+            image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop',
             title: 'Гастрономические туры',
             desc: 'Кулинарные открытия и Мишлен'
           }, {
-            icon: Mountain,
+            image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&h=400&fit=crop',
             title: 'Сафари и экспедиции',
             desc: 'Приключения в дикой природе'
           }, {
-            icon: Mountain,
+            image: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600&h=400&fit=crop',
             title: 'Горнолыжные курорты',
             desc: 'Премиальные склоны и шале'
           }, {
-            icon: Sparkles,
+            image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=400&fit=crop',
             title: 'Ретриты и SPA',
             desc: 'Перезагрузка и wellness'
           }, {
-            icon: Ship,
+            image: 'https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=600&h=400&fit=crop',
             title: 'Яхты и круизы',
             desc: 'Морские путешествия класса люкс'
           }, {
-            icon: Users,
+            image: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&h=400&fit=crop',
             title: 'Корпоративные поездки',
             desc: 'Incentive-туры для команд'
-          }].map((format, i) => <Card key={i} className="group hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-                <CardContent className="pt-6 text-center">
-                  <div className="mb-4 inline-flex p-4 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors">
-                    <format.icon className="w-8 h-8 text-primary" />
-                  </div>
+          }].map((format, i) => <Card key={i} className="group hover:shadow-lg hover:scale-105 transition-all cursor-pointer overflow-hidden border-0">
+                <div className="relative h-40 overflow-hidden">
+                  <img src={format.image} alt={format.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                </div>
+                <CardContent className="pt-4 text-center">
                   <h3 className="text-lg font-serif font-semibold mb-2">{format.title}</h3>
                   <p className="text-sm text-muted-foreground">{format.desc}</p>
                 </CardContent>
@@ -503,7 +504,7 @@ const Index = () => {
                 </div>
                 <div className="grid grid-cols-3 gap-6">
                   <div>
-                    <div className="text-3xl font-serif font-bold text-primary mb-1">10+</div>
+                    <div className="text-3xl font-serif font-bold text-primary mb-1">15+</div>
                     <div className="text-sm text-muted-foreground">лет опыта</div>
                   </div>
                   <div>
@@ -511,7 +512,7 @@ const Index = () => {
                     <div className="text-sm text-muted-foreground">стран</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-serif font-bold text-primary mb-1">500+</div>
+                    <div className="text-3xl font-serif font-bold text-primary mb-1">10000+</div>
                     <div className="text-sm text-muted-foreground">поездок</div>
                   </div>
                 </div>
