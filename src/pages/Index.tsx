@@ -4,6 +4,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Label } from '@/components/ui/label';
 import { Plane, Palmtree, Heart, UtensilsCrossed, Mountain, Waves, Ship, Users, Clock, Shield, Star, MessageCircle, ChevronDown, MapPin, Sparkles, CheckCircle2, Phone, Mail } from 'lucide-react';
 import heroImage from '@/assets/hero-travel.jpg';
 import aboutPhoto from '@/assets/about-photo.jpg';
@@ -11,9 +13,11 @@ const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
-    contact: '',
+    phone: '',
+    preferredContact: 'whatsapp',
     destination: '',
-    dates: '',
+    when: '',
+    wishes: '',
     consent: false
   });
   useEffect(() => {
@@ -582,26 +586,93 @@ const Index = () => {
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium mb-2">Контакт (WhatsApp / Telegram / телефон)</label>
-                  <Input placeholder="+7 (___) ___-__-__" value={formData.contact} onChange={e => setFormData({
-                  ...formData,
-                  contact: e.target.value
-                })} required className="h-12" />
+                  <label className="block text-sm font-medium mb-2">Номер телефона</label>
+                  <Input 
+                    placeholder="+7 (___) ___-__-__" 
+                    value={formData.phone} 
+                    onChange={e => {
+                      let value = e.target.value.replace(/\D/g, '');
+                      if (value.length > 0) {
+                        if (value[0] === '8') value = '7' + value.slice(1);
+                        if (value[0] !== '7') value = '7' + value;
+                      }
+                      if (value.length > 11) value = value.slice(0, 11);
+                      
+                      let formatted = '';
+                      if (value.length > 0) formatted = '+' + value[0];
+                      if (value.length > 1) formatted += ' (' + value.slice(1, 4);
+                      if (value.length > 4) formatted += ') ' + value.slice(4, 7);
+                      if (value.length > 7) formatted += '-' + value.slice(7, 9);
+                      if (value.length > 9) formatted += '-' + value.slice(9, 11);
+                      
+                      setFormData({
+                        ...formData,
+                        phone: formatted
+                      });
+                    }} 
+                    required 
+                    className="h-12" 
+                  />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium mb-2">Куда хотите поехать</label>
-                  <Input placeholder="Страна или регион" value={formData.destination} onChange={e => setFormData({
+                  <label className="block text-sm font-medium mb-2">Где вам удобнее общаться?</label>
+                  <RadioGroup 
+                    value={formData.preferredContact} 
+                    onValueChange={(value) => setFormData({...formData, preferredContact: value})}
+                    className="flex flex-wrap gap-3"
+                  >
+                    <div className="flex items-center">
+                      <RadioGroupItem value="call" id="call" className="sr-only peer" />
+                      <Label 
+                        htmlFor="call" 
+                        className="px-4 py-2 rounded-full border cursor-pointer transition-all peer-data-[state=checked]:bg-primary peer-data-[state=checked]:text-primary-foreground peer-data-[state=checked]:border-primary hover:bg-muted"
+                      >
+                        Звонок
+                      </Label>
+                    </div>
+                    <div className="flex items-center">
+                      <RadioGroupItem value="whatsapp" id="whatsapp" className="sr-only peer" />
+                      <Label 
+                        htmlFor="whatsapp" 
+                        className="px-4 py-2 rounded-full border cursor-pointer transition-all peer-data-[state=checked]:bg-primary peer-data-[state=checked]:text-primary-foreground peer-data-[state=checked]:border-primary hover:bg-muted"
+                      >
+                        WhatsApp
+                      </Label>
+                    </div>
+                    <div className="flex items-center">
+                      <RadioGroupItem value="telegram" id="telegram" className="sr-only peer" />
+                      <Label 
+                        htmlFor="telegram" 
+                        className="px-4 py-2 rounded-full border cursor-pointer transition-all peer-data-[state=checked]:bg-primary peer-data-[state=checked]:text-primary-foreground peer-data-[state=checked]:border-primary hover:bg-muted"
+                      >
+                        Telegram
+                      </Label>
+                    </div>
+                  </RadioGroup>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium mb-2">Куда хотите поехать?</label>
+                  <Input placeholder="Страна, город или направление" value={formData.destination} onChange={e => setFormData({
                   ...formData,
                   destination: e.target.value
                 })} className="h-12" />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium mb-2">Примерные даты и формат поездки</label>
-                  <Textarea placeholder="Например: конец мая, 10 дней, пляжный отдых для двоих" value={formData.dates} onChange={e => setFormData({
+                  <label className="block text-sm font-medium mb-2">Когда планируете отдых?</label>
+                  <Input placeholder="Месяц или конкретные даты" value={formData.when} onChange={e => setFormData({
                   ...formData,
-                  dates: e.target.value
+                  when: e.target.value
+                })} className="h-12" />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium mb-2">Пожелания к поездке</label>
+                  <Textarea placeholder="Например: пляжный отдых, двое взрослых, бюджет до..., нужен тихий отель" value={formData.wishes} onChange={e => setFormData({
+                  ...formData,
+                  wishes: e.target.value
                 })} rows={4} />
                 </div>
                 
