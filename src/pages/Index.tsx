@@ -6,11 +6,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
-import { Plane, Palmtree, Heart, UtensilsCrossed, Mountain, Waves, Ship, Users, Clock, Shield, Star, MessageCircle, ChevronDown, MapPin, Sparkles, CheckCircle2, Phone, Mail } from 'lucide-react';
+import { Plane, Palmtree, Heart, UtensilsCrossed, Mountain, Waves, Ship, Users, Clock, Shield, Star, MessageCircle, ChevronDown, MapPin, Sparkles, CheckCircle2, Phone, Mail, Menu, X } from 'lucide-react';
 import heroImage from '@/assets/hero-travel.jpg';
 import aboutPhoto from '@/assets/about-photo.jpg';
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -34,6 +35,7 @@ const Index = () => {
         behavior: 'smooth'
       });
     }
+    setIsMobileMenuOpen(false);
   };
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,6 +50,17 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="text-2xl font-serif font-bold text-primary">Travel Avenue</div>
+            
+            {/* Mobile Menu Button */}
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 text-white hover:text-primary transition-colors"
+              aria-label="Меню"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+            
+            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
               <button onClick={() => scrollToSection('formats')} className="text-sm hover:text-primary transition-colors">
                 Форматы
@@ -66,14 +79,40 @@ const Index = () => {
               </Button>
             </div>
           </div>
+          
+          {/* Mobile Navigation */}
+          <div className={`md:hidden overflow-hidden transition-all duration-300 ${isMobileMenuOpen ? 'max-h-80 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+            <div className="flex flex-col gap-4 py-4 bg-background/95 backdrop-blur-md rounded-lg px-4">
+              <button onClick={() => scrollToSection('formats')} className="text-left py-2 hover:text-primary transition-colors">
+                Форматы
+              </button>
+              <button onClick={() => scrollToSection('geography')} className="text-left py-2 hover:text-primary transition-colors">
+                География
+              </button>
+              <button onClick={() => scrollToSection('about')} className="text-left py-2 hover:text-primary transition-colors">
+                О нас
+              </button>
+              <button onClick={() => scrollToSection('reviews')} className="text-left py-2 hover:text-primary transition-colors">
+                Отзывы
+              </button>
+              <Button onClick={() => scrollToSection('contact')} variant="default" className="w-full">
+                Оставить заявку
+              </Button>
+            </div>
+          </div>
         </div>
       </nav>
 
       {/* Hero Section */}
+      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{
-        backgroundImage: `url(${heroImage})`
-      }}>
+        <div 
+          className="absolute inset-0 bg-cover bg-center md:bg-center" 
+          style={{
+            backgroundImage: `url(${heroImage})`,
+            backgroundPosition: 'center right'
+          }}
+        >
           <div className="absolute inset-0 bg-gradient-to-br from-foreground/60 via-foreground/40 to-transparent"></div>
         </div>
         
