@@ -80,24 +80,26 @@ const Index = () => {
             </div>
           </div>
           
-          {/* Mobile Navigation */}
-          <div className={`md:hidden overflow-hidden transition-all duration-300 ${isMobileMenuOpen ? 'max-h-80 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
-            <div className="flex flex-col gap-4 py-4 bg-background/95 backdrop-blur-md rounded-lg px-4">
-              <button onClick={() => scrollToSection('formats')} className="text-left py-2 hover:text-primary transition-colors">
+          {/* Mobile Navigation - Right-aligned dropdown */}
+          <div className={`md:hidden absolute top-full right-4 mt-2 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
+            <div className="flex flex-col gap-1 py-3 bg-foreground/80 backdrop-blur-xl rounded-2xl px-2 min-w-[200px] shadow-2xl border border-white/10">
+              <button onClick={() => scrollToSection('formats')} className="text-left py-3 px-4 text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all">
                 Форматы
               </button>
-              <button onClick={() => scrollToSection('geography')} className="text-left py-2 hover:text-primary transition-colors">
+              <button onClick={() => scrollToSection('geography')} className="text-left py-3 px-4 text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all">
                 География
               </button>
-              <button onClick={() => scrollToSection('about')} className="text-left py-2 hover:text-primary transition-colors">
+              <button onClick={() => scrollToSection('about')} className="text-left py-3 px-4 text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all">
                 О нас
               </button>
-              <button onClick={() => scrollToSection('reviews')} className="text-left py-2 hover:text-primary transition-colors">
+              <button onClick={() => scrollToSection('reviews')} className="text-left py-3 px-4 text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all">
                 Отзывы
               </button>
-              <Button onClick={() => scrollToSection('contact')} variant="default" className="w-full">
-                Оставить заявку
-              </Button>
+              <div className="px-2 pt-2">
+                <Button onClick={() => scrollToSection('contact')} variant="default" className="w-full">
+                  Оставить заявку
+                </Button>
+              </div>
             </div>
           </div>
         </div>
