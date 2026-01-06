@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label';
 import { Plane, Palmtree, Heart, UtensilsCrossed, Mountain, Waves, Ship, Users, Clock, Shield, Star, MessageCircle, ChevronDown, MapPin, Sparkles, CheckCircle2, Phone, Mail, Menu, X } from 'lucide-react';
 import heroImage from '@/assets/hero-travel.jpg';
 import aboutPhoto from '@/assets/about-photo.jpg';
+import honeymoonImage from '@/assets/honeymoon.jpg';
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -205,7 +206,7 @@ const Index = () => {
             title: 'Пляжный отдых',
             desc: 'Лучшие курорты и частные пляжи'
           }, {
-            image: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=400&fit=crop',
+            image: honeymoonImage,
             title: 'Медовый месяц',
             desc: 'Романтика в райских уголках мира'
           }, {
