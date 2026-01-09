@@ -10,6 +10,21 @@ import { Plane, Palmtree, Heart, UtensilsCrossed, Mountain, Waves, Ship, Users, 
 import heroImage from '@/assets/hero-travel.jpg';
 import aboutPhoto from '@/assets/about-photo.jpg';
 import honeymoonImage from '@/assets/honeymoon.jpg';
+import beachResortImage from "@/assets/beach-resort.jpg";
+import gastroTourImage from "@/assets/gastro-tour.jpg";
+import safariImage from "@/assets/safari.jpg";
+import skiResortImage from "@/assets/ski-resort.jpg";
+import spaRetreatImage from "@/assets/spa-retreat.jpg";
+import yachtCruiseImage from "@/assets/yacht-cruise.jpg";
+import corporateTravelImage from "@/assets/corporate-travel.jpg";
+import maldivesImage from "@/assets/maldives.jpg";
+import dubaiImage from "@/assets/dubai.jpg";
+import europeImage from "@/assets/europe.jpg";
+import japanImage from "@/assets/japan.jpg";
+import seychellesImage from "@/assets/seychelles.jpg";
+import turkeyImage from "@/assets/turkey.jpg";
+import chinaImage from "@/assets/china.jpg";
+import russiaImage from "@/assets/russia.jpg";
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -202,7 +217,7 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[{
-            image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=400&fit=crop',
+            image: beachResortImage,
             title: 'Пляжный отдых',
             desc: 'Лучшие курорты и частные пляжи'
           }, {
@@ -210,27 +225,27 @@ const Index = () => {
             title: 'Медовый месяц',
             desc: 'Романтика в райских уголках мира'
           }, {
-            image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop',
+            image: gastroTourImage,
             title: 'Гастрономические туры',
             desc: 'Кулинарные открытия и Мишлен'
           }, {
-            image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&h=400&fit=crop',
+            image: safariImage,
             title: 'Сафари и экспедиции',
             desc: 'Приключения в дикой природе'
           }, {
-            image: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600&h=400&fit=crop',
+            image: skiResortImage,
             title: 'Горнолыжные курорты',
             desc: 'Премиальные склоны и шале'
           }, {
-            image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=400&fit=crop',
+            image: spaRetreatImage,
             title: 'Ретриты и SPA',
             desc: 'Перезагрузка и wellness'
           }, {
-            image: 'https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=600&h=400&fit=crop',
+            image: yachtCruiseImage,
             title: 'Яхты и круизы',
             desc: 'Морские путешествия класса люкс'
           }, {
-            image: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&h=400&fit=crop',
+            image: corporateTravelImage,
             title: 'Корпоративные поездки',
             desc: 'Incentive-туры для команд'
           }].map((format, i) => <Card key={i} className="group hover:shadow-lg hover:scale-105 transition-all cursor-pointer overflow-hidden border-0">
@@ -300,39 +315,39 @@ const Index = () => {
             {[{
             region: 'Мальдивы',
             desc: 'Виллы на воде, идеальный медовый месяц',
-            image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&h=400&fit=crop'
+            image: maldivesImage
           }, {
             region: 'ОАЭ',
             desc: 'Роскошь Дубая, пустынные приключения',
-            image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&h=400&fit=crop'
+            image: dubaiImage
           }, {
             region: 'Европа',
             desc: 'Культурные маршруты, гастрономия, шопинг',
-            image: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&h=400&fit=crop'
+            image: europeImage
           }, {
             region: 'Япония',
             desc: 'Гастрономия, культура, городские маршруты',
-            image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&h=400&fit=crop'
+            image: japanImage
           }, {
             region: 'Сейшелы',
             desc: 'Уединённые острова, дикая природа',
-            image: 'https://images.unsplash.com/photo-1589979481223-deb893043163?w=600&h=400&fit=crop'
+            image: seychellesImage
           }, {
             region: 'Африка',
             desc: 'Сафари, океан, экзотика',
-            image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&h=400&fit=crop'
+            image: safariImage
           }, {
             region: 'Турция',
             desc: 'Классика и эксклюзивные туры',
-            image: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=600&h=400&fit=crop'
+            image: turkeyImage
           }, {
             region: 'Китай',
             desc: 'Бизнес, экскурсии, отдых',
-            image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=600&h=400&fit=crop'
+            image: chinaImage
           }, {
             region: 'Россия',
             desc: 'Бизнес-поездки и премиальный отдых',
-            image: 'https://images.unsplash.com/photo-1513326738677-b964603b136d?w=600&h=400&fit=crop'
+            image: russiaImage
           }].map((dest, i) => <Card key={i} className="overflow-hidden group cursor-pointer border-0 shadow-lg hover:shadow-2xl transition-all duration-300">
                 <div className="relative h-56 overflow-hidden">
                   <img src={dest.image} alt={dest.region} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
