@@ -68,11 +68,7 @@ const Index = () => {
             <div className="text-2xl font-serif font-bold text-primary">Travel Avenue</div>
             
             {/* Mobile Menu Button */}
-            <button 
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 transition-colors text-foreground hover:text-primary"
-              aria-label="Меню"
-            >
+            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden p-2 transition-colors text-foreground hover:text-primary" aria-label="Меню">
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
             
@@ -124,13 +120,10 @@ const Index = () => {
       {/* Hero Section */}
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center md:bg-center" 
-          style={{
-            backgroundImage: `url(${heroImage})`,
-            backgroundPosition: 'center right'
-          }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center md:bg-center" style={{
+        backgroundImage: `url(${heroImage})`,
+        backgroundPosition: 'center right'
+      }}>
           <div className="absolute inset-0 bg-gradient-to-br from-foreground/60 via-foreground/40 to-transparent"></div>
         </div>
         
@@ -368,12 +361,8 @@ const Index = () => {
       {/* Why Choose Me Section */}
       <section className="py-24">
         <div className="container px-4">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-center mb-4">
-            Почему со мной удобно
-          </h2>
-          <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto text-lg">
-            Беру на себя все заботы, чтобы вы наслаждались отдыхом
-          </p>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-center mb-4">Почему с нами удобно</h2>
+          <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto text-lg">Берём на себя все заботы, чтобы вы наслаждались отдыхом</p>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[{
@@ -598,6 +587,9 @@ const Index = () => {
             q: 'Как строится работа и оплата?',
             a: 'После согласования концепции путешествия я выставляю счёт на организацию. Оплата происходит в два этапа: 50% при бронировании и 50% за 30 дней до поездки. Все расходы прозрачны и обсуждаются заранее.'
           }, {
+            q: 'С какими бюджетами вы работаете?',
+            a: 'Я специализируюсь на премиальных путешествиях. Минимальный бюджет зависит от направления и формата, но обычно начинается от 5000€ на человека за недельную поездку.'
+          }, {
             q: 'Можно ли учесть особые запросы?',
             a: 'Конечно! Я работаю с особенностями питания, медицинскими требованиями, путешествиями с детьми и любыми другими запросами. Индивидуальный подход — основа моей работы.'
           }, {
@@ -641,65 +633,47 @@ const Index = () => {
                 
                 <div>
                   <label className="block text-sm font-medium mb-2">Номер телефона</label>
-                  <Input 
-                    placeholder="+7 (___) ___-__-__" 
-                    value={formData.phone} 
-                    onChange={e => {
-                      let value = e.target.value.replace(/\D/g, '');
-                      if (value.length > 0) {
-                        if (value[0] === '8') value = '7' + value.slice(1);
-                        if (value[0] !== '7') value = '7' + value;
-                      }
-                      if (value.length > 11) value = value.slice(0, 11);
-                      
-                      let formatted = '';
-                      if (value.length > 0) formatted = '+' + value[0];
-                      if (value.length > 1) formatted += ' (' + value.slice(1, 4);
-                      if (value.length > 4) formatted += ') ' + value.slice(4, 7);
-                      if (value.length > 7) formatted += '-' + value.slice(7, 9);
-                      if (value.length > 9) formatted += '-' + value.slice(9, 11);
-                      
-                      setFormData({
-                        ...formData,
-                        phone: formatted
-                      });
-                    }} 
-                    required 
-                    className="h-12" 
-                  />
+                  <Input placeholder="+7 (___) ___-__-__" value={formData.phone} onChange={e => {
+                  let value = e.target.value.replace(/\D/g, '');
+                  if (value.length > 0) {
+                    if (value[0] === '8') value = '7' + value.slice(1);
+                    if (value[0] !== '7') value = '7' + value;
+                  }
+                  if (value.length > 11) value = value.slice(0, 11);
+                  let formatted = '';
+                  if (value.length > 0) formatted = '+' + value[0];
+                  if (value.length > 1) formatted += ' (' + value.slice(1, 4);
+                  if (value.length > 4) formatted += ') ' + value.slice(4, 7);
+                  if (value.length > 7) formatted += '-' + value.slice(7, 9);
+                  if (value.length > 9) formatted += '-' + value.slice(9, 11);
+                  setFormData({
+                    ...formData,
+                    phone: formatted
+                  });
+                }} required className="h-12" />
                 </div>
                 
                 <div>
                   <label className="block text-sm font-medium mb-2">Где вам удобнее общаться?</label>
-                  <RadioGroup 
-                    value={formData.preferredContact} 
-                    onValueChange={(value) => setFormData({...formData, preferredContact: value})}
-                    className="flex flex-wrap gap-3"
-                  >
+                  <RadioGroup value={formData.preferredContact} onValueChange={value => setFormData({
+                  ...formData,
+                  preferredContact: value
+                })} className="flex flex-wrap gap-3">
                     <div className="flex items-center">
                       <RadioGroupItem value="call" id="call" className="sr-only peer" />
-                      <Label 
-                        htmlFor="call" 
-                        className="px-4 py-2 rounded-full border cursor-pointer transition-all peer-data-[state=checked]:bg-primary peer-data-[state=checked]:text-primary-foreground peer-data-[state=checked]:border-primary hover:bg-muted"
-                      >
+                      <Label htmlFor="call" className="px-4 py-2 rounded-full border cursor-pointer transition-all peer-data-[state=checked]:bg-primary peer-data-[state=checked]:text-primary-foreground peer-data-[state=checked]:border-primary hover:bg-muted">
                         Звонок
                       </Label>
                     </div>
                     <div className="flex items-center">
                       <RadioGroupItem value="whatsapp" id="whatsapp" className="sr-only peer" />
-                      <Label 
-                        htmlFor="whatsapp" 
-                        className="px-4 py-2 rounded-full border cursor-pointer transition-all peer-data-[state=checked]:bg-primary peer-data-[state=checked]:text-primary-foreground peer-data-[state=checked]:border-primary hover:bg-muted"
-                      >
+                      <Label htmlFor="whatsapp" className="px-4 py-2 rounded-full border cursor-pointer transition-all peer-data-[state=checked]:bg-primary peer-data-[state=checked]:text-primary-foreground peer-data-[state=checked]:border-primary hover:bg-muted">
                         WhatsApp
                       </Label>
                     </div>
                     <div className="flex items-center">
                       <RadioGroupItem value="telegram" id="telegram" className="sr-only peer" />
-                      <Label 
-                        htmlFor="telegram" 
-                        className="px-4 py-2 rounded-full border cursor-pointer transition-all peer-data-[state=checked]:bg-primary peer-data-[state=checked]:text-primary-foreground peer-data-[state=checked]:border-primary hover:bg-muted"
-                      >
+                      <Label htmlFor="telegram" className="px-4 py-2 rounded-full border cursor-pointer transition-all peer-data-[state=checked]:bg-primary peer-data-[state=checked]:text-primary-foreground peer-data-[state=checked]:border-primary hover:bg-muted">
                         Telegram
                       </Label>
                     </div>
