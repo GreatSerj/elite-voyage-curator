@@ -576,13 +576,10 @@ const Index = () => {
             Ответы на вопросы, которые чаще всего задают
           </p>
           
-          <Accordion type="single" collapsible className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="max-w-3xl mx-auto space-y-4">
             {[{
               q: 'Как строится работа и оплата?',
               a: 'После согласования концепции путешествия мы выставляем счёт на организацию. Оплата происходит в два этапа: 50% при бронировании и 50% за 30 дней до поездки. Все расходы прозрачны и обсуждаются заранее.'
-            }, {
-              q: 'С какими бюджетами вы работаете?',
-              a: 'Мы специализируемся на премиальных путешествиях. Минимальный бюджет зависит от направления и формата, но обычно начинается от 5000€ на человека за недельную поездку.'
             }, {
               q: 'Можно ли учесть особые запросы?',
               a: 'Конечно! Мы работаем с особенностями питания, медицинскими требованиями, путешествиями с детьми и любыми другими запросами. Индивидуальный подход — основа нашей работы.'
@@ -593,11 +590,11 @@ const Index = () => {
               q: 'Что делать, если во время поездки что-то пойдёт не по плану?',
               a: 'Мы на связи 24/7 на протяжении всей поездки. Любая ситуация решается оперативно — у нас есть проверенные партнёры в каждом направлении, которые помогут в любой момент.'
             }].map((faq, i) => (
-              <AccordionItem key={i} value={`item-${i}`}>
-                <AccordionTrigger className="text-left text-lg font-medium">
+              <AccordionItem key={i} value={`item-${i}`} className="bg-card rounded-2xl border-0 px-6 shadow-sm">
+                <AccordionTrigger className="text-left text-lg font-bold hover:no-underline py-6">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
+                <AccordionContent className="text-muted-foreground pb-6">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>
