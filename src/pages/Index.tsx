@@ -425,7 +425,7 @@ const Index = () => {
           }, {
             num: '05',
             title: 'Сопровождение',
-            desc: 'Остаюсь с вами на связи до возвращения домой'
+            desc: 'Остаёмся с вами на связи до возвращения домой'
           }].map((step, i) => <div key={i} className="flex gap-6 mb-12 last:mb-0">
                 <div className="shrink-0 w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-white font-bold text-xl">
                   {step.num}
