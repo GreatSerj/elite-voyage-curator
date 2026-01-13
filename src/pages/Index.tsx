@@ -494,7 +494,7 @@ const Index = () => {
             Отзывы клиентов
           </h2>
           <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto text-lg">
-            Что говорят те, кто уже путешествовал со мной
+            Что говорят те, кто уже путешествовал с нами
           </p>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
