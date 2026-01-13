@@ -132,10 +132,7 @@ const Index = () => {
             <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 text-balance leading-tight">
               Премиальные путешествия под ключ
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-              Создаю персональные маршруты в любой точке мира — от уединённых вилл на океане до насыщенных гастро-туров. 
-              Забочусь о каждом шаге поездки, чтобы вы отдыхали, а не решали вопросы.
-            </p>
+            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">Создаём персональные маршруты в любой точке мира — от уединённых вилл на океане до насыщенных гастро-туров. Заботимся о каждом шаге поездки, чтобы вы отдыхали, а не решали вопросы.</p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button size="lg" onClick={() => scrollToSection('contact')} className="bg-primary hover:bg-primary/90 text-lg px-8">
                 Оставить заявку
@@ -297,12 +294,8 @@ const Index = () => {
       {/* Geography Section */}
       <section id="geography" className="py-24 bg-secondary/30">
         <div className="container px-4">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-center mb-4">
-            Куда я организую путешествия
-          </h2>
-          <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto text-lg">
-            Работаю с лучшими направлениями по всему миру
-          </p>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-center mb-4">Куда мы организуем путешествия</h2>
+          <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto text-lg">Работаем с лучшими направлениями по всему миру</p>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[{
@@ -545,7 +538,7 @@ const Index = () => {
               <div>
                 <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">О нас</h2>
                 <div className="space-y-4 text-lg text-muted-foreground leading-relaxed mb-8">
-                  <p>Я Ирина Сиделева - основатель и владелец компании Тревел Авеню. За 12+ лет в индустрии премиального туризма мы организовали сотни путешествий в 40+ странах мира. Моя философия проста: каждая поездка должна быть уникальной и безупречной.</p>
+                  <p>Я Ирина Сиделева - основатель и владелец компании Тревел Авеню. За 12+ лет в индустрии премиального туризма мы организовали тысячи путешествий в 40+ странах мира. Моя философия проста: каждая поездка должна быть уникальной и безупречной.</p>
                   <p>Мы не работаем по шаблонам. Вместо этого мы внимательно слушаем, что важно именно для вас, и создаем маршрут, который идеально подходит под ваш стиль жизни и ожидания.</p>
                   <p>Наш фокус — премиальные путешествия, где важна каждая деталь. От выбора отеля до бронирования столика в ресторане с мишленовской звездой — мы позаботимся обо всём.
 
@@ -599,10 +592,7 @@ const Index = () => {
             q: 'Что делать, если во время поездки что-то пойдёт не по плану?',
             a: 'Я на связи 24/7 на протяжении всей поездки. Любая ситуация решается оперативно — у меня есть проверенные партнёры в каждом направлении, которые помогут в любой момент.'
           }].map((faq, i) => <Card key={i}>
-                <CardContent className="pt-6">
-                  <h3 className="text-xl font-serif font-semibold mb-3">{faq.q}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
-                </CardContent>
+                
               </Card>)}
           </div>
         </div>
@@ -615,9 +605,7 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
               Готовы к следующему путешествию?
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Оставьте заявку, и я свяжусь с вами в течение 24 часов, чтобы обсудить детали вашего идеального отдыха
-            </p>
+            <p className="text-lg text-muted-foreground">Оставьте заявку, и мы свяжемся с вами в течение 24 часов, чтобы обсудить детали вашего идеального отдыха</p>
           </div>
           
           <Card className="max-w-2xl mx-auto">
