@@ -10,6 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Plane, Palmtree, Heart, UtensilsCrossed, Mountain, Waves, Ship, Users, Clock, Shield, Star, MessageCircle, ChevronDown, MapPin, Sparkles, CheckCircle2, Phone, Mail, Menu, X } from 'lucide-react';
 import heroImage from '@/assets/hero-travel.jpg';
 import aboutPhoto from '@/assets/about-photo.jpg';
+import logoImage from '@/assets/logo.png';
 import honeymoonImage from '@/assets/honeymoon.jpg';
 import beachResortImage from "@/assets/beach-resort.jpg";
 import gastroTourImage from "@/assets/gastro-tour.jpg";
@@ -66,7 +67,7 @@ const Index = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-serif font-bold text-primary">Travel Avenue</div>
+            <img src={logoImage} alt="Travel Avenue" className="h-10 md:h-12" />
             
             {/* Mobile Menu Button */}
             <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden p-2 transition-colors text-foreground hover:text-primary" aria-label="Меню">
