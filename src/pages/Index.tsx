@@ -67,7 +67,7 @@ const Index = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <img src={logoImage} alt="Travel Avenue" className="h-10 w-auto" />
+            <img src={logoImage} alt="Travel Avenue" className="h-14 w-auto" />
             
             {/* Mobile Menu Button */}
             <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden p-2 transition-colors text-foreground hover:text-primary" aria-label="Меню">
