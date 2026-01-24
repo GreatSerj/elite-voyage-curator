@@ -8,7 +8,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Plane, Palmtree, Heart, UtensilsCrossed, Mountain, Waves, Ship, Users, Clock, Shield, Star, MessageCircle, ChevronDown, MapPin, Sparkles, CheckCircle2, Phone, Mail, Menu, X } from 'lucide-react';
-import logoImage from '@/assets/logo.svg';
+import logoImage from '@/assets/logo.png';
 import heroImage from '@/assets/hero-travel.jpg';
 import aboutPhoto from '@/assets/about-photo.jpg';
 import honeymoonImage from '@/assets/honeymoon.jpg';
