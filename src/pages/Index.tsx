@@ -8,6 +8,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Plane, Palmtree, Heart, UtensilsCrossed, Mountain, Waves, Ship, Users, Clock, Shield, Star, MessageCircle, ChevronDown, MapPin, Sparkles, CheckCircle2, Phone, Mail, Menu, X } from 'lucide-react';
+import logoImage from '@/assets/logo.svg';
 import heroImage from '@/assets/hero-travel.jpg';
 import aboutPhoto from '@/assets/about-photo.jpg';
 import honeymoonImage from '@/assets/honeymoon.jpg';
@@ -66,7 +67,7 @@ const Index = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-serif font-bold text-primary">Travel Avenue</div>
+            <img src={logoImage} alt="Travel Avenue" className="h-10" />
             
             {/* Mobile Menu Button */}
             <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden p-2 transition-colors text-foreground hover:text-primary" aria-label="Меню">
