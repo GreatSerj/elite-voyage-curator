@@ -753,8 +753,9 @@ const Index = () => {
               </div>
             </div>
           </div>
-          <div className="border-t border-background/20 pt-8 text-center text-background/60 text-sm">
-            © 2025 Travel Avenue. Все права защищены.
+          <div className="border-t border-background/20 pt-8 text-center text-background/60 text-sm space-y-2">
+            <p>ООО «Авеню тревел» ИНН 7841372627</p>
+            <p>© 2025 Travel Avenue. Все права защищены.</p>
           </div>
         </div>
       </footer>
